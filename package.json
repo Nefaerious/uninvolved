@@ -1,0 +1,11 @@
+{
+  "name": "game",
+  "version": "0.0.1",
+  "description": "A uninvolved game",
+  "author": "CJ Duffee and Sammy Shin",
+  "main": "server.js",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/Nefaerious/uninvolved"
+  }
+}

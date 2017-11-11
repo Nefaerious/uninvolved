@@ -1,4 +1,6 @@
+var game = new PIXI.Container();
 var renderer = PIXI.autoDetectRenderer(256,256);
+
 renderer.backgroundColor = 0xf0f0f0;
 renderer.view.style.position = "absolute";
 renderer.view.style.display = "block";
@@ -7,5 +9,15 @@ renderer.resize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.view);
 
-var game = new PIXI.container();
-renderer.render(game);
+PIXI.loader
+  .add("../resources/villager.png")
+  .load(setup);
+
+function setup() {
+  var sprite = new PIXI.Sprite(
+    PIXI.loader.resources["../resources/villager.png"].texture
+  );
+
+  game.addChild(sprite);
+  renderer.render(game);
+}
