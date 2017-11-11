@@ -6,6 +6,9 @@ var path = require('path');
 
 var port = process.env.PORT || 3000;
 
+app.set('views', './views');
+app.set('view engine', 'ejs');
+
 app.use('/', require('./graphics/index'));
 app.use('/resources', express.static(path.join(__dirname, '/resources')));
 
