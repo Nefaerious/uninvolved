@@ -9,7 +9,6 @@ app.set('views', './views');
 app.set('view engine', 'ejs');
 
 app.use('/', require('./routes/index'));
-app.use('/game', require('./routes/game'));
 app.use('/resources', express.static(path.join(__dirname, 'resources')));
 
 app.set('port', port);
