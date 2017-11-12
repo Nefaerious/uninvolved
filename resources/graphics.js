@@ -26,7 +26,7 @@ function setup() {
   state = update;
 
   townhouse.x = screen.width/2-54;
-  townhouse.y = screen.height/2-43;
+  townhouse.y = screen.height/2-38;
 
   game.addChild(male_villager);
   game.addChild(townhouse);
@@ -39,8 +39,7 @@ function gameLoop() {
   renderer.render(game);
 }
 function update(){
-  male_villager.x+=1;
-  male_villager.y+=1;
+
 }
 
 gameLoop();
