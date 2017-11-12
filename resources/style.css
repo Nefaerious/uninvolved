@@ -1,7 +1,9 @@
   * {padding: 0; margin: 0}
 
+body, html { height:100%; }
 canvas {
   background-color: #d3d3d3;
-  width: window.innerHeight;
-  height: window.innerWidth;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
