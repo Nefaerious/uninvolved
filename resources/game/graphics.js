@@ -30,6 +30,9 @@ function setup() {
 
 
 
+
+    game.addChild(male_villager);
+
   game.addChild(townhouse);
   renderer.render(game);
 }
@@ -40,6 +43,6 @@ function gameLoop() {
   renderer.render(game);
 }
 function update(){
-
+  male_villager.x +=1;
 }
 gameLoop();
