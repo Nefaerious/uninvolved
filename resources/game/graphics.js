@@ -43,5 +43,5 @@ function gameLoop() {
   renderer.render(game);
 }
 function play(){
-  male_villager.x +=1;
+
 }
