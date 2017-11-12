@@ -23,7 +23,7 @@ var person = {id: 0, x: 0, y: 0, health: 1.00, hunger: 1.00, firstName:"John", l
 
 
 // environments
-var tree = {};
+var tree = {x: 0, y: 0, health = 1.00};
 
 
 var lastTime  = window.performance.now();
