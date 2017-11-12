@@ -21,3 +21,14 @@ function setup() {
   game.addChild(sprite);
   renderer.render(game);
 }
+
+function gameLoop() {
+
+  requestAnimationFrame(gameLoop);
+
+  //Move the cat 1 pixel to the right each frame
+  sprite.x += 1;
+
+  //Render the stage to see the animation
+  renderer.render(stage);
+}
