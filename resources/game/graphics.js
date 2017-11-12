@@ -1,6 +1,6 @@
 var game = new PIXI.Container();
 var renderer = PIXI.autoDetectRenderer(256,256);
-var townhouse, male_villager, state, villager;
+var townhouse, male_villager, state, villager, array;
 
 renderer.backgroundColor = 0xf0f0f0;
 renderer.view.style.position = "absolute";
@@ -30,8 +30,10 @@ function setup() {
 
   for(var p in people){
     villager = male_villager;
+
     villager.x = p.x;
     villager.y = p.y;
+    array.push(villager);
     game.addChild(villager);
   }
   game.addChild(townhouse);
@@ -44,7 +46,6 @@ function gameLoop() {
   renderer.render(game);
 }
 function play(){
-  var array = game.children;
   var counter = 0;
   for(var p in people){
     array[counter].x = p.x;
