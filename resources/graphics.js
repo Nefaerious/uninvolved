@@ -46,4 +46,4 @@ function gameLoop() {
 function update(){
 
 }
-setTimout(gameLoop(), 1000);
+setTimeout(gameLoop(), 1000);
