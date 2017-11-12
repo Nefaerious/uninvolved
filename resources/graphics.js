@@ -10,6 +10,13 @@ renderer.resize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.view);
 
+var rectangle = new Graphics();
+rectangle.beginFill(0x66CCFF);
+rectangle.drawRect(0, 0, 20, 20);
+rectangle.endFill();
+rectangle.x = screen.width/2;
+rectangle.y = screen.height/2;
+
 PIXI.loader
   .add("../resources/villager_male.png")
   .load(setup);
@@ -21,6 +28,8 @@ function setup() {
 
   state = update;
 
+
+  game.addChild(rectangle);
   game.addChild(sprite);
   renderer.render(game);
 }
