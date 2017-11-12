@@ -44,9 +44,11 @@ function gameLoop() {
   renderer.render(game);
 }
 function play(){
+  var array = game.children;
+  var counter = 0;
   for(var p in people){
-    male_villager.x = p.x;
-    male_villager.y = p.y;
-    game.addChild(male_villager);
+    array[counter].x = p.x;
+    array[counter].y = p.y;
+    counter++;
   }
 }
