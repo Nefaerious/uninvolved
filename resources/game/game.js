@@ -79,20 +79,23 @@ function checkOb(p){
 function setOb(p){
 	if(p.hunger<0.5){
 
-	}
-	p.obName = "mate";
-	var bestM = false;
-	var bestDist = Number.MAX_SAFE_INTEGER;
-	for(var i=0; i<people.length; i++){
-		var m = people[i];
-		thisDist = distTwo(p,m);
-		if(m != p && m.male == !p.male && !m.marriedTo && thisDist<bestDist){
-			bestM = m;
-			bestDist = thisDist;
+	} else if(p.marriedTo == false){
+		p.obName = "mate";
+		var bestM = false;
+		var bestDist = Number.MAX_SAFE_INTEGER;
+		for(var i=0; i<people.length; i++){
+			var m = people[i];
+			thisDist = distTwo(p,m);
+			if(m != p && m.male == !p.male && !m.marriedTo && thisDist<bestDist){
+				bestM = m;
+				bestDist = thisDist;
+			}
 		}
-	}
-	if(bestM != false){
-		p.ob = bestM;
+		if(bestM != false){
+			p.ob = bestM;
+		}
+	} else {
+		
 	}
 }
 
@@ -155,6 +158,7 @@ function init() {
 		var t = getClone(tree);
 		t.x = Math.random() * width;
 		t.y = Math.random() * height;
+		enviorment.push(t);
 	}
 
 }
