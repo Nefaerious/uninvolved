@@ -10,6 +10,12 @@ renderer.resize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.view);
 
+
+PIXI.loader
+  .add("../resources/townhouse.png")
+  .add("../resources/male_villager.png")
+  .load(setup);
+
 function setup() {
   townhouse = new PIXI.Sprite(
     PIXI.loader.resources["../resources/townhouse.png"].texture
@@ -19,11 +25,8 @@ function setup() {
   );
 
   state = play;
-
   townhouse.x = screen.width/2-54;
   townhouse.y = screen.height/2-38;
-
-
 
   for(var p in people){
     male_villager.x = p.x;
