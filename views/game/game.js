@@ -165,7 +165,7 @@ var count = 0;
 
 lastTime = window.performance.now();
 setInterval(function(){ 
-	if(count++ < 20000){
+	if(count++ < 20){
 		loop();
 	}
 }, 8);
