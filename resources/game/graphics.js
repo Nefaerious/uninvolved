@@ -1,6 +1,6 @@
 var game = new PIXI.Container();
 var renderer = PIXI.autoDetectRenderer(256,256);
-var townhouse, male_villager, state;
+var townhouse, male_villager, state, villager;
 
 renderer.backgroundColor = 0xf0f0f0;
 renderer.view.style.position = "absolute";
@@ -29,7 +29,7 @@ function setup() {
   townhouse.y = screen.height/2-38;
 
   for(var p in people){
-    var villager = male_villager;
+    villager = male_villager;
     villager.x = p.x;
     villager.y = p.y;
     game.addChild(villager);
