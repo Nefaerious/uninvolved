@@ -25,7 +25,7 @@ function setup() {
   );
 
   state = play;
-  townhouse.x = screen.width/2-54;
+  townhouse.x = screen.width/2-44;
   townhouse.y = screen.height/2-38;
 
   for(var p in people){
