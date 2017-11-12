@@ -49,7 +49,7 @@ function loop(){
 }
 
 function move(p){
-	dX = dTime * (p.speed / 1000);
+	p.x += dTime * (p.speed / 1000);
 	return;
 	if(distToOb(p) > 5){
 		var dTime = thisTime - lastTime;
@@ -174,7 +174,7 @@ var count = 0;
 
 lastTime = window.performance.now();
 setInterval(function(){
-	if(count++ < 2000000){
+	if(count++ < 2000){
 		loop();
 	}
 }, 8);
