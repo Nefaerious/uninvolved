@@ -1,6 +1,6 @@
 var game = new PIXI.Container();
 var renderer = PIXI.autoDetectRenderer(256,256);
-var sprite, state;
+var townhouse, male_villager, state;
 
 renderer.backgroundColor = 0xf0f0f0;
 renderer.view.style.position = "absolute";
@@ -11,17 +11,25 @@ renderer.resize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.view);
 
 PIXI.loader
-  .add("../resources/villager.png")
+  .add("../resources/townhouse.png")
+  .add("../resources/male_villager.png")
   .load(setup);
 
 function setup() {
-  sprite = new PIXI.Sprite(
-    PIXI.loader.resources["../resources/villager.png"].texture
+  townhouse = new PIXI.Sprite(
+    PIXI.loader.resources["../resources/townhouse.png"].texture
+  );
+  male_villager = new PIXI.Sprite(
+    PIXI.loader.resources["../resources/male_villager.png"].texture
   );
 
   state = update;
 
-  game.addChild(sprite);
+  townhouse.x = screen.width/2-54;
+  townhouse.y = screen.height/2-38;
+
+  game.addChild(male_villager);
+  game.addChild(townhouse);
   renderer.render(game);
 }
 
