@@ -1,5 +1,5 @@
 var distCutoff = 5;
-
+var hungerTime = 60;
 
 var width = 1000;
 var height = 1000;
