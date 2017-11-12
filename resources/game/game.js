@@ -1,6 +1,8 @@
 var distCutoff = 5;
 var hungerTime = 600;
 var babyTime = 60;
+var initTrees= 300;
+
 var width = 1000;
 var height = 1000;
 
@@ -23,7 +25,7 @@ var person = {id: 0, x: 0, y: 0, health: 1.00, hunger: 1.00, firstName:"John", l
 
 
 // environments
-var tree = {x: 0, y: 0, health = 1.00};
+var tree = {x: 0, y: 0, health: 1.00};
 
 
 var lastTime  = window.performance.now();
@@ -144,6 +146,7 @@ function init() {
 	girl.x = 525;
 	girl.y = 475;
 	people.push(girl);
+
 }
 
 function getClone(o) {
