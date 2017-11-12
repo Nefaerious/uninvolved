@@ -147,7 +147,7 @@ function init() {
 }
 
 function getClone(o) {
-	return Object.assign({}, o); 
+	return Object.assign({}, o);
 }
 
 function distTwo(a, b) {
@@ -168,7 +168,7 @@ init();
 var count = 0;
 
 lastTime = window.performance.now();
-setInterval(function(){ 
+setInterval(function(){
 	if(count++ < 20){
 		loop();
 	}

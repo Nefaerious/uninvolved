@@ -10,12 +10,6 @@ renderer.resize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.view);
 
-
-setTimeout(function(){PIXI.loader
-  .add("../resources/townhouse.png")
-  .add("../resources/male_villager.png")
-  .load(setup);},1000);
-
 function setup() {
   townhouse = new PIXI.Sprite(
     PIXI.loader.resources["../resources/townhouse.png"].texture
