@@ -31,5 +31,7 @@ function gameLoop() {
   sprite.x += 1;
 
   //Render the stage to see the animation
-  renderer.render(stage);
+  renderer.render(game);
 }
+
+gameLoop();
