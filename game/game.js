@@ -11,7 +11,7 @@ var beasts = [];
 var environment = [];
 
 // buildings
-var townHall = {id: 0, x:0, y: 0, width: 10, height: 10, type: "townHall";
+var townHall = {id: 0, x:0, y: 0, width: 10, height: 10, type: "townHall"};
 
 // people
 var person = {id: 0, x: 0, y: 0, health: 1.00, hunger: 1.00, firstName:"John", lastName: "Smith", male: true, ob: false, obName: false, speed: 10, marriedTo: false};
@@ -21,24 +21,27 @@ var person = {id: 0, x: 0, y: 0, health: 1.00, hunger: 1.00, firstName:"John", l
 
 // environments
 var lastTime  = window.performance.now();
-var thisTime = window.perfomrance.now();
+var thisTime = window.performance.now();
 
 
 function loop(){
+	thisTime = window.performance.now();
+	console.log(people);
 	for(var i =0; i<people.length; i++){
 		var p = people[i];
 		move(p);
 		checkOb(p);
 		setOb(p);
 	}
+	lastTime = thisTime;
 }
 
 function move(p){
-	if(distToObj(p)< 5){
+	if(distToOb(p) > 5){
 		var dTime = thisTime - lastTime;
 		var pheta = Math.atan2(p.ob.y-p.y, p.ob.x - p.x);
-		var dX = dTime * p.speed * Math.cos(pheta);
-		var dY = dTime * p.speed * Math.sin(pheta);
+		var dX = dTime * (p.speed / 1000) * Math.cos(pheta);
+		var dY = dTime * (p.speed / 1000) * Math.sin(pheta);
 		p.x += dX;
 		p.y += dY;
 	}
@@ -62,9 +65,10 @@ function setOb(p){
 	p.obName = "mate";
 	var bestM = false;
 	var bestDist = Number.MAX_SAFE_INTEGER;
-	for(var m in people){
-		thisDist = dist(p,m);
-		if(m.gender== !p.gender && !m.marriedTo && thisDist<bestDist){
+	for(var i=0; i<people.length; i++){
+		var m = people[i];
+		thisDist = distTwo(p,m);
+		if(m != p && m.male == !p.male && !m.marriedTo && thisDist<bestDist){
 			bestM = m;
 			bestDist = thisDist;
 		}
@@ -85,6 +89,7 @@ function marry(a,b){
 }
 
 function init() {
+	console.log("INIT");
 	var th = getClone(townHall);
 	th.x = 500;
 	th.y = 500;
@@ -108,15 +113,30 @@ function getClone(o) {
 	return Object.assign({}, o); 
 }
 
-function dist(a, b) {
+function distTwo(a, b) {
 	return Math.sqrt(Math.pow(a.x-b.x,2) + Math.pow(a.y-b.y,2));
 }
 
 
-function dist(a, x,y) {
+function distThree(a, x, y) {
 	return Math.sqrt(Math.pow(a.x-x,2) + Math.pow(a.y-y,2));
 }
 
 function distToOb(a){
-	return dist(a, a.ob.x, a.ob.y);
+	return distThree(a, a.ob.x, a.ob.y);
 }
+
+function shit(){
+
+}
+
+init();
+
+var count = 0;
+
+lastTime = window.performance.now();
+setInterval(function(){ 
+	if(count++ < 1000){
+		loop();
+	}
+}, 8);
