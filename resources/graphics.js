@@ -31,7 +31,7 @@ function gameLoop() {
   renderer.render(game);
 }
 function update(){
-
+  sprite.x +=1;
 }
 
 gameLoop();
