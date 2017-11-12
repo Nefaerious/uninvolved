@@ -29,9 +29,10 @@ function setup() {
   townhouse.y = screen.height/2-38;
 
   for(var p in people){
-    male_villager.x = p.x;
-    male_villager.y = p.y;
-    game.addChild(male_villager);
+    var villager = male_villager;
+    villager.x = p.x;
+    villager.y = p.y;
+    game.addChild(villager);
   }
   game.addChild(townhouse);
   gameLoop();
@@ -43,5 +44,9 @@ function gameLoop() {
   renderer.render(game);
 }
 function play(){
-
+  for(var p in people){
+    male_villager.x = p.x;
+    male_villager.y = p.y;
+    game.addChild(male_villager);
+  }
 }
