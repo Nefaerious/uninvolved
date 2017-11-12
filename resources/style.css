@@ -2,4 +2,6 @@
 
 canvas {
   background-color: #d3d3d3;
+  width: window.innerHeight;
+  height: window.innerWidth;
 }
