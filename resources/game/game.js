@@ -34,7 +34,7 @@ var thisTime = window.performance.now();
 
 function loop(){
 	thisTime = window.performance.now();
-	console.log(people);
+	console.log(people[0].x);
 	for(var i =people.length-1; i>=0; i--){
 		var p = people[i];
 		move(p);
@@ -49,6 +49,7 @@ function loop(){
 }
 
 function move(p){
+	var dTime = thisTime - lastTime;
 	p.x += dTime * (p.speed / 1000);
 	return;
 	if(distToOb(p) > 5){
