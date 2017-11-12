@@ -1,6 +1,6 @@
 var game = new PIXI.Container();
 var renderer = PIXI.autoDetectRenderer(256,256);
-var sprite;
+var sprite, state;
 
 renderer.backgroundColor = 0xf0f0f0;
 renderer.view.style.position = "absolute";
@@ -19,19 +19,19 @@ function setup() {
     PIXI.loader.resources["../resources/villager.png"].texture
   );
 
+  state = update;
+
   game.addChild(sprite);
   renderer.render(game);
 }
 
 function gameLoop() {
-
   requestAnimationFrame(gameLoop);
-
-  //Move the cat 1 pixel to the right each frame
-  sprite.x += 1;
-
-  //Render the stage to see the animation
+  state();
   renderer.render(game);
+}
+function update(){
+
 }
 
 gameLoop();
