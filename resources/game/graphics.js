@@ -10,10 +10,11 @@ renderer.resize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.view);
 
-PIXI.loader
+
+setTimeout(function(){PIXI.loader
   .add("../resources/townhouse.png")
   .add("../resources/male_villager.png")
-  .load(setup);
+  .load(setup);},1000);
 
 function setup() {
   townhouse = new PIXI.Sprite(
@@ -36,7 +37,7 @@ function setup() {
     game.addChild(male_villager);
   }
   game.addChild(townhouse);
-  setTimeout(gameLoop(), 3000);
+  gameLoop();
 }
 
 function gameLoop() {
