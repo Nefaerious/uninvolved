@@ -23,7 +23,7 @@ function setup() {
     PIXI.loader.resources["../resources/male_villager.png"].texture
   );
 
-  state = update;
+  state = play;
 
   townhouse.x = screen.width/2-54;
   townhouse.y = screen.height/2-38;
@@ -36,7 +36,7 @@ function setup() {
     game.addChild(male_villager);
   }
   game.addChild(townhouse);
-  renderer.render(game);
+  gameLoop();
 }
 
 function gameLoop() {
@@ -44,7 +44,6 @@ function gameLoop() {
   state();
   renderer.render(game);
 }
-function update(){
+function play(){
   male_villager.x +=1;
 }
-setTimeout(gameLoop(),1000);
