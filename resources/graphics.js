@@ -1,5 +1,6 @@
 var game = new PIXI.Container();
 var renderer = PIXI.autoDetectRenderer(256,256);
+var sprite;
 
 renderer.backgroundColor = 0xf0f0f0;
 renderer.view.style.position = "absolute";
@@ -14,7 +15,7 @@ PIXI.loader
   .load(setup);
 
 function setup() {
-  var sprite = new PIXI.Sprite(
+  sprite = new PIXI.Sprite(
     PIXI.loader.resources["../resources/villager.png"].texture
   );
 
