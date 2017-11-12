@@ -19,7 +19,7 @@ var environment = [];
 var townHall = {id: 0, x:0, y: 0, width: 10, height: 10, type: "townHall"};
 
 // people
-var person = {id: 0, x: 0, y: 0, health: 1.00, hunger: 1.00, firstName:"John", lastName: "Smith", male: true, ob: false, obName: false, speed: 10, marriedTo: false};
+var person = {id: 0, x: 0, y: 0, health: 1.00, hunger: 1.00, firstName:"John", lastName: "Smith", male: true, ob: false, obName: false, speed: 1, marriedTo: false};
 
 // beasts
 
@@ -52,7 +52,7 @@ function move(p){
 	var dTime = thisTime - lastTime;
 	p.x += dTime * (p.speed / 1000);
 	return;
-	if(distToOb(p) > 5){
+	if(distToOb(p) > distCutoff){
 		var dTime = thisTime - lastTime;
 		var pheta = Math.atan2(p.ob.y-p.y, p.ob.x - p.x);
 		var dX = dTime * (p.speed / 1000) * Math.cos(pheta);
@@ -63,7 +63,7 @@ function move(p){
 }
 
 function checkOb(p){
-	if(distToOb(p) < 5){
+	if(distToOb(p) < distCutoff){
 		switch(p.obName){
 			case 'mate':
 				if(p.ob.obName=="mate"){
@@ -149,6 +149,13 @@ function init() {
 	girl.x = 525;
 	girl.y = 475;
 	people.push(girl);
+
+
+	for(var i = 0; i<initTrees; i++){
+		var t = getClone(tree);
+		t.x = Math.random() * width;
+		t.y = Math.random() * height;
+	}
 
 }
 
