@@ -36,6 +36,7 @@ function setup() {
   }
   game.addChild(townhouse);
   renderer.render(game);
+  gameLoop();
 }
 
 function gameLoop() {
@@ -46,5 +47,3 @@ function gameLoop() {
 function update(){
 
 }
-
-gameLoop();
