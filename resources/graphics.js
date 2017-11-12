@@ -10,7 +10,7 @@ renderer.resize(window.innerWidth, window.innerHeight);
 
 document.body.appendChild(renderer.view);
 
-var rectangle = new Graphics();
+var rectangle = new PIXI.Graphics();
 rectangle.beginFill(0x66CCFF);
 rectangle.drawRect(0, 0, 20, 20);
 rectangle.endFill();
