@@ -12,6 +12,7 @@ var people = [];
 var beasts = [];
 var environment = [];
 
+
 // buildings
 var townHall = {id: 0, x:0, y: 0, width: 10, height: 10, type: "townHall"};
 
@@ -22,6 +23,9 @@ var person = {id: 0, x: 0, y: 0, health: 1.00, hunger: 1.00, firstName:"John", l
 
 
 // environments
+var tree = {};
+
+
 var lastTime  = window.performance.now();
 var thisTime = window.performance.now();
 
