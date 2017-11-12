@@ -95,7 +95,8 @@ function setOb(p){
 			p.ob = bestM;
 		}
 	} else {
-		
+		var bestW = false; 
+		p.obName = "wood";
 	}
 }
 
