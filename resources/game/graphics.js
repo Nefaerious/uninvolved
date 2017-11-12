@@ -36,7 +36,7 @@ function setup() {
     game.addChild(male_villager);
   }
   game.addChild(townhouse);
-  gameLoop();
+  setTimeout(gameLoop(), 3000);
 }
 
 function gameLoop() {
