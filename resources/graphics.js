@@ -28,7 +28,13 @@ function setup() {
   townhouse.x = screen.width/2-54;
   townhouse.y = screen.height/2-38;
 
-  game.addChild(male_villager);
+
+  for(var p in people){
+    male_villager.x = p.x;
+    male_villager.y = p.y;
+
+    game.addChild(male_villager);
+  }
   game.addChild(townhouse);
   renderer.render(game);
 }
