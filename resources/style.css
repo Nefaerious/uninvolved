@@ -2,16 +2,6 @@
 
 body, html { height:100%; }
 
-body {
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  width:100%;
-  height:100%;
-}
-canvas {
-  background-color: #d3d3d3;
-  position: absolute;
-  width: 400;
-  height: 400;
-}
+#paper{position:absolute;
+    width:100%;
+    height:100%;}
