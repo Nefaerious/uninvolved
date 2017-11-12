@@ -49,6 +49,8 @@ function loop(){
 }
 
 function move(p){
+	dX = dTime * (p.speed / 1000);
+	return;
 	if(distToOb(p) > 5){
 		var dTime = thisTime - lastTime;
 		var pheta = Math.atan2(p.ob.y-p.y, p.ob.x - p.x);
