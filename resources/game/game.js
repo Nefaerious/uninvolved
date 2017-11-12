@@ -138,16 +138,16 @@ function init() {
 	buildings.push(th);
 
 	var guy = getClone(person);
-	guy.x = 475;
-	guy.y = 475;
+	guy.x = 0;
+	guy.y = 0;
 	people.push(guy);
 
 	var girl = getClone(person);
 	girl.male = false;
 	girl.firstName = "Jill";
 	girl.lastName = "Stein";
-	girl.x = 525;
-	girl.y = 475;
+	girl.x = 0;
+	girl.y = 50;
 	people.push(girl);
 
 
