@@ -11,12 +11,12 @@ renderer.resize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.view);
 
 PIXI.loader
-  .add("../resources/villager.png")
+  .add("../resources/villager_male.png")
   .load(setup);
 
 function setup() {
   sprite = new PIXI.Sprite(
-    PIXI.loader.resources["../resources/villager.png"].texture
+    PIXI.loader.resources["../resources/villager_male.png"].texture
   );
 
   state = update;
